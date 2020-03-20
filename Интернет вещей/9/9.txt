@@ -1,0 +1,29 @@
+# на вход: ip адрес и разрядность маски
+# на выходе адрес сети по этой маске и исходный ip в двоичном представлении
+
+f=open('input.txt')
+adr=f.readline().split(".")
+mask = f.readline()
+mask = int(mask)
+f.close()
+mask_arr = [0,0,0,0]
+for i in range (mask//8):
+    mask_arr[i] = 255
+s = ""    
+for i in range(8):
+    if i < mask%8 :
+        s = s + "1"    
+    else :
+        s += "0"
+mask_arr[mask//8] = int(s, base = 2)
+adr2 = [0,0,0,0]
+res = [0,0,0,0]
+for i in range(4):
+    adr2[i] = int(adr[i])   
+    res[i] = adr2[i]&mask_arr[i]
+f=open('output.txt','w')
+f.write(".".join(str(i) for i in res))
+f.write("; ")
+f.write(".".join("{:08b}".format(i) for i in adr2))
+f.close()
+print("Done!")
