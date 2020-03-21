@@ -1,4 +1,3 @@
-# I-Profi-2020-Olimps
 ![Image alt](https://github.com/ArtemAvanesov/I-Profi-2020-Olimps/raw/master/iprofi_logo.jpg)
 
 «Я — профессионал» — это всероссийская олимпиада для студентов разных специальностей: технических, гуманитарных и естественнонаучных.
